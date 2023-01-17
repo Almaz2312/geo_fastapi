@@ -3,7 +3,6 @@ from typing import Optional
 
 
 class Shop(BaseModel):
-    id: int
     name: str
     latitude: float
     longitude: float
@@ -12,7 +11,6 @@ class Shop(BaseModel):
 
 
 class UpdateShop(BaseModel):
-    id: Optional[int]
     name: Optional[str]
     latitude: Optional[float]
     longitude: Optional[float]

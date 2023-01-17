@@ -13,7 +13,9 @@ client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
 
 database = client.mongo_db
 
-shop_collection = database['shops']
+
+def get_db() -> motor.motor_asyncio.AsyncIOMotorClient:
+    yield database
 
 
 def shop_helper(shop) -> dict:
@@ -25,5 +27,3 @@ def shop_helper(shop) -> dict:
         'address': shop['address'],
         'city': shop['city']
     }
-
-# 63bfb893756e96700d8ea536
